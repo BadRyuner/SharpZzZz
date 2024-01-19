@@ -11,19 +11,6 @@ using System.Text;
 namespace SharpZzZz;
 internal class Zygote
 {
-    enum hostfxr_delegate_type
-    {
-        hdt_com_activation,
-        hdt_load_in_memory_assembly,
-        hdt_winrt_activation,
-        hdt_com_register,
-        hdt_com_unregister,
-        hdt_load_assembly_and_get_function_pointer,
-        hdt_get_function_pointer,
-        hdt_load_assembly,
-        hdt_load_assembly_bytes,
-    }
-
     internal static void Create(string process) => Create_Internal(Process.GetProcessesByName(process)[0]);
     internal static void Create(Process process) => Create_Internal(process);
     internal static void Create(Func<Process> get) => Create_Internal(get());
